@@ -1,0 +1,465 @@
+body {
+ font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+  letter-spacing: 0.1em;
+  font-size: 0.9em;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+    
+}
+/*¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶ pallet color ¶¶¶¶¶¶*/
+#hero                 { background-color: #3B5EC4; color: white; }
+  #hero .arrow-box    { background-color: #F14848; }
+  #hero .arrow        { border-color: #3B5EC4 transparent transparent transparent; }
+
+#one                  { background-color: #F14848; color: white; }
+  #one .arrow-box     { background-color: #3B5EC4; }
+  #one .arrow         { border-color: #F14848 transparent transparent transparent; }
+
+#two                  { background-color: #3B5EC4; color: white; }
+  #two .arrow-box     { background-color: #FFF5BC; }
+  #two .arrow         { border-color: #3B5EC4 transparent transparent transparent; }
+
+#three                 { background-color: #FFF5BC; color: #3B5EC4; }
+  #three .arrow-box    { background-color: #F14848; }
+  #three .arrow        { border-color: #FFF5BC transparent transparent transparent; }
+
+#four                  { background-color: #F14848; color: white; }
+  #four .arrow-box     { background-color: #3B5EC4; }
+  #four .arrow         { border-color: #F14848 transparent transparent transparent; }
+
+#five                  { background-color: #3B5EC4; color: white; }
+  #five .arrow-box     { background-color: #F14848; }
+  #five .arrow         { border-color: #3B5EC4 transparent transparent transparent; }
+
+#six                   { background-color: #F14848; color: white; }
+  #six .arrow-box      { background-color: #FFF5BC; }
+  #six .arrow          { border-color: #F14848 transparent transparent transparent; }
+
+#six1                   { background-color: #F14848; color: white; }
+  #six .arrow-box      { background-color: #FFF5BC; }
+  #six .arrow          { border-color: #F14848 transparent transparent transparent; }
+
+#six2                   { background-color: #3B5EC4; color: white; }
+  #six .arrow-box      { background-color: #FFF5BC; }
+  #six .arrow          { border-color: #F14848 transparent transparent transparent; }
+
+#seven                  { background-color: #FFF5BC; color: #3B5EC4; }
+  #seven .arrow-box     { background-color: #3B5EC4; }
+  #seven .arrow         { border-color: #FFF5BC transparent transparent transparent; }
+
+#eight                  { background-color: #F14848; color: white; }
+  #eight .arrow-box     { background-color: #F14848; }
+  #eight .arrow         { border-color: #3B5EC4 transparent transparent transparent; }
+
+#eight1                  { background-color: #3B5EC4; color: white; }
+  #eight .arrow-box     { background-color: #F14848; }
+  #eight .arrow           { border-color: #3B5EC4 transparent transparent transparent; }
+
+#nine                   { background-color: #F14848; color: white; }
+  #nine .arrow-box      { background-color: #ff2b63; }
+  #nine .arrow          { border-color: #872748 transparent transparent transparent; }
+  #footer               { background-color: #FFF5BC; color: #3B5EC4; }
+
+
+
+
+/*¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶ navigation ¶¶¶¶¶¶*/
+#nav-container {
+  position: fixed;
+  left: 1em;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 99;
+}
+#menu {
+  display: block;
+  list-style-type: none;
+  margin-left: -2.5em;
+}
+#menu li a {
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-sizing: border-box;
+  display: block;
+  flex-direction: column;
+  height: 15px;
+  margin: 1.5em 0;
+  width: 15px;
+}
+#nav { display: none; }
+.link {
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-sizing: border-box;
+  display: block;
+  color: #fff;
+  height: 15px;
+  margin: 1.5em 0;
+  width: 15px;
+}
+.link-active {background-color: #fff;}
+@media screen and (max-width: 1024px) {
+  #nav { display: block; }
+  #menu { display: none; }
+}
+/*¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶¶ general ¶¶¶¶¶¶*/
+#fullpage {
+  position: relative;
+  width: 100%;
+}
+.section {  
+  align-items: center;
+/*
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+*/
+    height: auto;
+  min-height: 100vh;
+  position: relative;
+  width: 100%;
+    padding: 2em;
+    
+}
+
+.block {
+  text-align: center;
+
+  /* May want to do this if there is risk the container may be narrower than the element inside */
+
+}
+ 
+/* The ghost, nudged to maintain perfect centering */
+.block:before {
+  content: '';
+  display: inline-block;
+  height: 100vh;
+  vertical-align: middle;
+  margin-right: -0.25em; /* Adjusts for spacing */
+}
+
+/* The element to be centered, can also be of any width and height */ 
+.centered {
+  display: inline-block;
+  vertical-align: middle;
+    width: 80%;
+    margin: 0 auto;
+}
+.centered * {
+    text-align: left;
+}
+
+.section:after {
+    content: '';
+    border-style: solid;
+    border-width: 15px 15px 0 15px;
+    height: 0;
+    width: 0;
+    z-index: 2;
+    border-left-color: transparent;
+    border-right-color: transparent;
+    border-top-color: #3B5EC4;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -15px;
+}
+.section.red:after {
+    border-top-color: #F14848;
+}
+.section.yellow:after {
+    border-top-color: #FFF5BC;
+}
+
+.section > p, .section h1 {
+  max-width: 800px;
+/*  padding: 0.5em;*/
+}
+.section p { width: 80%; }
+.arrow-box {
+  bottom: 0;
+  height: 20px;
+  position: absolute;
+  width: 100%;
+    display: none;
+}
+.arrow {  
+  border-style: solid;
+  border-width: 15px 15px 0 15px;
+  height: 0;
+  margin: 0 auto;
+  width: 0;
+    display: none;
+}
+
+#three {
+  justify-content: space-between;
+}
+.three-text-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+  justify-content: center;
+}
+#footer {
+  align-items: center;
+  display: flex;
+  height: 50vh;
+  width: 100%;
+    margin-bottom: -9rem;
+
+}
+#footer p {
+  margin: auto;
+}
+#link {
+  bottom: 20px;
+  color: #fff;
+  opacity: 0.6;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#link p {font-size: 0.8em; margin: 0; margin-left: 5px;}
+#link:hover {opacity: 1;}
+
+
+/*-----------images------------*/
+
+.hero-img {
+    width: 45rem;
+    margin-right: 10em;
+    margin-bottom: 5em;
+    margin-top: 15em;
+}
+
+.logo-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 15rem;
+    padding: 2rem;
+    margin-right: 0;
+    margin-bottom: 0;
+}
+    
+#one  img {
+    width: 15em;
+    margin-top: 2rem;
+}   
+
+#two img {
+    width: 20em;
+}
+
+#three {
+   background-image: url('../img/birdprint.png');
+   background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.feather-box {
+     width: 22em;
+    margin-left: 35em; 
+}
+
+.feather-top {
+    position: absolute;
+    left: 17rem;
+    top: 5rem;
+    max-width: 15rem;
+}
+
+.feather-bottom {
+    position: absolute;
+    left: 8rem;
+    top: 15rem;
+    max-width: 15rem;
+}
+
+#six .content-half.image-half {
+    width: 40%;
+}
+
+#six .content-half.light-pink {
+    width: 60%;
+}
+
+#six img {
+    
+     width: 20em;
+}
+
+#nine img
+{ 
+     width: 20em;
+    margin-left: 40em;
+}
+
+#eight1 img {
+
+ position: absolute;
+    left: 25rem;
+    top: 28rem;
+    max-width: 23rem;
+
+
+}
+/*----------type--------*/
+
+
+.hero-text {
+    z-index: 1;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    text-align: left;
+    max-width: 450px;
+}
+
+.hero-text h1, h3 {
+    font-size: 4rem;
+    padding: 0rem;
+    margin: 0;
+    font-weight: 300;
+}
+.hero-text h2 {
+    font-size: 5rem;
+    padding: 0rem;
+    margin: 0;
+    font-weight: 400;
+}
+
+
+.hero-note {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    max-width: 25rem;
+    text-align: left;
+}
+
+#one .content-half {
+    text-align: left;
+    padding-left: 5rem;
+    width: 60%;
+}
+
+#one .content-half p {
+    width: 100%;
+}
+
+#one .image-half {
+    width: 40%;
+}
+
+#two .content-half {
+    text-align: left;
+    
+
+}
+#two .image-half {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#six1 p {
+/*    text-align: left;*/
+    width: 100%;
+}
+
+#six2 {
+/*    height: 100vh;*/
+}
+
+#seven {
+
+    width: 100%;
+}
+
+#eight {
+
+    width: 100%;
+    }
+#three {
+    
+/*   text-align: left;*/
+    width: 100%;  
+}
+
+#five 
+{
+    
+/*   text-align: left;*/
+    width: 100%; 
+    
+}
+
+#six2 {
+      
+/*   text-align: left;*/
+    width: 100%;  
+
+}
+
+#footer {
+    font-size: 0.7em;
+    width: 100%;
+   }
+
+/*--------Layout----------*/
+
+.row-halves {
+    display: flex;
+}
+
+.row-halves .content-half {
+    width: 50%;
+    flex-direction: column;
+   
+    
+}
+
+.row-halves .content-half h6 {
+    margin-bottom: 1rem;
+}
+
+.image-half img {
+    width: 100%;
+    height: auto;
+}
+
+.image-half1 img{
+    width: 20%;
+    
+}
+
+#seven
+{
+    background-image: url('../img/birdprint.png');
+       background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*---------Map---------*/
+
+#wrapper {
+    height: 400px;
+    position: relative;
+
+}
+  #map {
+     position: absolute;
+     width: 50%;
+     height: 400px;
+     left: 25%;
+     right: 25%;
+     margin-bottom: 3em;
+     align-content: center}
+
+
